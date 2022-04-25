@@ -131,7 +131,7 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
 
         mIndicatorColor = ta.getColor(R.styleable.SegmentTabLayout_tl_indicator_color, Color.parseColor("#222831"));
         mIndicatorHeight = ta.getDimension(R.styleable.SegmentTabLayout_tl_indicator_height, -1);
-        mIndicatorCornerRadius = ta.getDimension(R.styleable.SegmentTabLayout_tl_indicator_corner_radius, -1);
+        mIndicatorCornerRadius = ta.getDimension(R.styleable.SegmentTabLayout_tl_indicator_corner_radius, dp2px(0));
         mIndicatorMarginLeft = ta.getDimension(R.styleable.SegmentTabLayout_tl_indicator_margin_left, dp2px(0));
         mIndicatorMarginTop = ta.getDimension(R.styleable.SegmentTabLayout_tl_indicator_margin_top, 0);
         mIndicatorMarginRight = ta.getDimension(R.styleable.SegmentTabLayout_tl_indicator_margin_right, dp2px(0));
@@ -295,10 +295,10 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
                 /**The corners are ordered top-left, top-right, bottom-right, bottom-left*/
                 mRadiusArr[0] = mIndicatorCornerRadius;
                 mRadiusArr[1] = mIndicatorCornerRadius;
-                mRadiusArr[2] = 0;
-                mRadiusArr[3] = 0;
-                mRadiusArr[4] = 0;
-                mRadiusArr[5] = 0;
+                mRadiusArr[2] = mTitles.length > 1 ? 0 : mIndicatorCornerRadius;
+                mRadiusArr[3] = mTitles.length > 1 ? 0 : mIndicatorCornerRadius;
+                mRadiusArr[4] = mTitles.length > 1 ? 0 : mIndicatorCornerRadius;
+                mRadiusArr[5] = mTitles.length > 1 ? 0 : mIndicatorCornerRadius;
                 mRadiusArr[6] = mIndicatorCornerRadius;
                 mRadiusArr[7] = mIndicatorCornerRadius;
             } else if (mCurrentTab == mTabCount - 1) {
